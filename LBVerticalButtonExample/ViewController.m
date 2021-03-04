@@ -23,8 +23,14 @@
     [verticalButton setImage:[UIImage imageNamed:@"img_+"] forState:UIControlStateNormal];
     [verticalButton setTitle:@"垂直" forState:UIControlStateNormal];
     [verticalButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [verticalButton.badgeButton setTitle:@"99+" forState:UIControlStateNormal];
     [self.view addSubview:verticalButton];
+    
+    [verticalButton.badgeButton setTitle:@"99+" forState:UIControlStateNormal];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [verticalButton.badgeButton setTitle:@"9" forState:UIControlStateNormal];
+    });
+    
 }
 
 @end
