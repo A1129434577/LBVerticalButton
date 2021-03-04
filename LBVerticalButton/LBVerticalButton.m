@@ -46,8 +46,9 @@
     imageViewFrame.origin.y = minY;
     imageViewFrame.origin.x = (CGRectGetWidth(self.bounds)-CGRectGetWidth(imageViewFrame))/2;
     
-    titleLabelFrame.origin.x = (CGRectGetWidth(self.bounds)-CGRectGetWidth(titleLabelFrame))/2;
+    titleLabelFrame.origin.x = 0;
     titleLabelFrame.origin.y = CGRectGetMaxY(imageViewFrame)+self.lineSpacing;
+    titleLabelFrame.size.width = CGRectGetWidth(self.bounds);
 
     self.titleLabel.frame = titleLabelFrame;
     self.imageView.frame = imageViewFrame;
@@ -73,7 +74,7 @@
     CGRect badgeBtnFrame;
     badgeBtnFrame.size.height = MAX(CGRectGetHeight(self.badgeButton.imageView.bounds), CGRectGetHeight(self.badgeButton.titleLabel.bounds));
     
-    badgeBtnFrame.size.width = CGRectGetWidth(self.badgeButton.imageView.bounds)+CGRectGetWidth(self.badgeButton.titleLabel.bounds);
+    badgeBtnFrame.size.width = CGRectGetWidth(self.badgeButton.imageView.bounds)+CGRectGetWidth(self.badgeButton.titleLabel.bounds)+5;
 
     if (CGRectGetWidth(badgeBtnFrame) < 17) {
         badgeBtnFrame.size.width = 17;
